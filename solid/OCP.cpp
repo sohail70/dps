@@ -57,7 +57,7 @@ struct ProductFilter //replicating is not good (modification is bad, but extendi
 
 
 //((((((((((((((((((((((((((((((Good Design))))))))))))))))))))))))))))))))))))
-// \1 and 2 is templated  pure virtual class,
+// 1 and 2 is templated  pure virtual class,
 // 3-4-5 implements 1 and 2 ,
 // 6 is just a templated class (not pure virtual class)
 
