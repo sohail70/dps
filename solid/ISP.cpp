@@ -10,25 +10,25 @@ struct Document;
 // ((((((((((((Without breaking the interface))))))))))))
 
 /*
-struct IMachine
-{
-    virtual void print(std::vector<Document*> docs) = 0;
-    virtual void scan(std::vector<Document*> docs) = 0;
-    virtual void fax(std::vector<Document*> docs) = 0;
-};
-
-//bad Idea : why?
-// 1: If you want to change 1 functionality (like print) --> you would have to recompile
-// 2: client doesnt need all of it --> he just want print and doesnt want to implement other funcs
-
-struct MFP : IMachine
-{
-    void print(std::vector<Document*> docs) override;
-    void scan(std::vector<Document*> docs) override;
-    void fax(std::vector<Document*> docs) override;
-};
-
-*/
+ *   struct IMachine
+ *   {
+ *       virtual void print(std::vector<Document*> docs) = 0;
+ *       virtual void scan(std::vector<Document*> docs) = 0;
+ *       virtual void fax(std::vector<Document*> docs) = 0;
+ *   };
+ *
+ *   //bad Idea : why?
+ *   // 1: If you want to change 1 functionality (like print) --> you would have to recompile
+ *   // 2: client doesnt need all of it --> he just want print and doesnt want to implement other funcs
+ *
+ *   struct MFP : IMachine
+ *   {
+ *       void print(std::vector<Document*> docs) override;
+ *       void scan(std::vector<Document*> docs) override;
+ *       void fax(std::vector<Document*> docs) override;
+ *   };
+ *
+ */
 //((((((((((((((((((((((((ISP))))))))))))))))))))))))))
 
 struct IPrinter
@@ -73,3 +73,4 @@ struct Machine : IMachine //Machine is a decorator and aggregates the printer an
 };
 
 //Now you can build your own printer and implement IPrinter and use it in Machine which uses any IPrinter (sohail's printer, printer, ...)
+// and do not worry about implementing the scanner too!
